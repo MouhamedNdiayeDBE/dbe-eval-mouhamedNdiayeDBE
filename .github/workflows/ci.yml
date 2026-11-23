@@ -60,6 +60,15 @@ jobs:
           grep -q 'Requêtes par heure' "${reports[-1]}"
           cat "${reports[-1]}"
 
+      - name: Vérifier les arguments invalides de analyse.sh
+        shell: bash
+        run: |
+          set +e
+          bash scripts/analyse.sh logs/access.log --top 0
+          invalid_top_status=$?
+          set -e
+          test "$invalid_top_status" -eq 1
+
       - name: Tester l'arrêt propre du surveillant
         shell: bash
         run: |
