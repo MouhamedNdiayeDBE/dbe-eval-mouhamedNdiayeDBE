@@ -49,9 +49,9 @@ La variable de dépôt MATRICULE doit être vérifiée dans Settings → Secrets
 
 ## G4 — Intégration continue (4 pts)
 
-Le workflow actif est .github/workflows/ci.yml. Il se trouve au bon emplacement. Un doublon dans .github/workflow/ci.yml a été supprimé dans la PR #2. Le workflow vérifie la variable, la syntaxe Bash, compile Java 17, génère 2 000 lignes, exécute analyse.sh, teste l'arrêt SIGTERM et publie le rapport comme artefact.
+Le workflow actif est .github/workflows/ci.yml. Il se trouve au bon emplacement. Le doublon dans .github/workflow/ci.yml a été supprimé dans la PR #2. Le run 45204763558 (tentative 2) a passé toutes les étapes et publié l'artefact rapport-analyse.
 
-La PR #1 et la PR #2 ont été fusionnées. La PR #2 (fix/evaluation-deliverables-ci) a été intégrée à main par le merge commit 84512b4 le 23 novembre 2026. Le merge commit est marqué Verified par GitHub, mais les commits créés via l'API dans la branche de correction ne portent pas tous une signature SSH vérifiée : ils ne satisfont donc pas l'exigence de signature personnelle. Le run de main 45202493199 a échoué avant de démarrer le job (runner_id=0, steps=[], aucun log de step exploitable). Cette panne de démarrage n'établit pas une erreur de compilation ; G4 reste non validé tant qu'un run ne termine pas au vert.
+La PR #1, la PR #2 et la PR #3 sont fusionnées dans main. La PR #2 a été intégrée par 84512b4 et la PR #3 par 7c3fbce. Le premier run de main après la PR #3, 45204763558, n'a pas obtenu de runner (runner_id=0). La tentative 2 du même run a ensuite réussi le 23 novembre 2026 : runner_id=1000002832, 10 étapes exécutées, toutes avec conclusion success. Le job a vérifié la variable MATRICULE, Bash, Java 17, 2 000 lignes, le rapport, le rejet de --top 0, l'arrêt SIGTERM et l'upload de l'artefact. G4 est donc validé par ce run vert.
 
 Sur le poste, vérifier que Actions est activé et que la variable MATRICULE est définie. Puis ouvrir la PR vers main, attendre un pipeline vert et seulement ensuite fusionner. Le rapport d'artefact doit correspondre au rapport local.
 
@@ -141,21 +141,21 @@ git rev-parse --short HEAD
 
 Recopier le SHA court sur la fiche de contrôle. Ne jamais fabriquer reflog.txt à partir de git log : ce ne sont pas les mêmes informations.
 
-## État au 23 novembre 2026
+## État au 23 novembre 2026 — après le run CI vert
 
 | Exigence | État vérifié |
 |---|---|
 | Dépôt privé, main, collaborateur pape1283 | OK |
 | .gitignore, code Java, scripts | OK |
-| README complet et documentation | ajoutés sur la PR #2, non fusionnés |
-| Workflow CI au bon emplacement | présent ; run 45202493199 échoue avant les étapes (runner_id: 0) |
+| README complet et documentation | présents sur main après les PR #2 et #3 |
+| Workflow CI au bon emplacement | validé : run 45204763558, tentative 2, 10 étapes sur 10 réussies |
 | par_heure dans le rapport | OK |
 | Rebase interactif des 3 WIP sur feature/heures | non démontré ; deux WIP déjà sur main |
 | Stash / stash pop | non démontré |
 | Branche release/1.0 et commit avec trailer cherry-pick | résultat distant présent (37bc3f5), commande locale non démontrée |
 | Revert de G8 | OK |
 | Tag signé v1.0 | présent, signature non vérifiée par GitHub (no_user) |
-| Release GitHub avec archive | absente |
+| Release GitHub avec archive | absente ; création manuelle restante |
 | Reflog et historique Bash exportés | absents |
 
 La branche de correction ne réécrit pas main et ne prétend pas effectuer les opérations qui exigent le shell personnel, la clé SSH privée ou les droits de création de Release de l'étudiant.
