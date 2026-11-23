@@ -1,0 +1,617 @@
+Script started on 2026-11-23 09:43:47+00:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="120" LINES="30"]
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ clear
+[?2004l[H[2J[3J[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ nano  src/GenerateurLogs.java[1P[1P[1@ 
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;55H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 8.7.1                                    src/GenerateurLogs.java                                             [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^F(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[1;77H(B[0;7m*[28d(B[m[K[1;119H[?12l[?25h[2dv[?25l[?12l[?25hu[?25l[?12l[?25h [?25l[?12l[?25h[K[?25l[?12l[?25h[?25l[28d(B[0;7mSave modified buffer?                                                                                                   [29;1H Y(B[m Yes[K[30d(B[0;7m N(B[m No  [30;16H (B[0;7m^C(B[m Cancel[K[28;23H[?12l[?25h[?25l[29d(B[0;7m^G(B[m Help[29;25H(B[0;7mM-D(B[m DOS Format[29;49H(B[0;7mM-A(B[m Append[29;73H(B[0;7mM-B(B[m Backup File[29;97H(B[0;7m^T(B[m Browse[30d(B[0;7m^C(B[m Cancel[17G        (B[0;7mM-M(B[m Mac Format[30;49H(B[0;7mM-P(B[m Prepend[30;73H(B[0;7m^Q(B[m Discard buffer[29;106H[A(B[0;7mWrite to File: src/GenerateurLogs.java(B[m[?12l[?25h[?25l[28;53H[1K (B[0;7m[ Writing... ](B[m[K[1;77H(B[0;7m [119G(B[m[28;53H(B[0;7m[ Wrote 1 line ](B[m[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ nano src/GenerateurLogs.java
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;54H(B[0;7m[ Reading... ](B[m[28;53H(B[0;7m[ Read 1 line ](B[m[H(B[0;7m  GNU nano 8.7.1                                    src/GenerateurLogs.java                                             [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^F(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[?12l[?25h[?25l[28d[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ javax[Kc nano src/GenerateurLogs.java[1P[1P[1P[1P[1@j[1@a[1@v[1@a[1@c[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lsrc/GenerateurLogs.java:13: error: unclosed string literal
+System.err.println("Usage : java -cp out GenerateurLogs <matricule>
+                   ^
+src/GenerateurLogs.java:14: error: unclosed string literal
+<nombreDeLignes>");
+                ^
+src/GenerateurLogs.java:64: error: unclosed string literal
+System.out.printf("%s - - [23/Nov/2026:%02d:%02d:%02d +0000] \"%s %s HTTP/1.1\"
+                  ^
+src/GenerateurLogs.java:65: error: unclosed string literal
+%d %d %dms%n",
+            ^
+src/GenerateurLogs.java:65: error: not a statement
+%d %d %dms%n",
+          ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+  ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+            ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                  ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                             ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                 ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                 ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                     ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                       ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                              ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                                ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                                      ^
+src/GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+^
+src/GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+      ^
+src/GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+        ^
+src/GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+              ^
+src/GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+                ^
+src/GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+                     ^
+23 errors
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ javac src/GenerateurLogs.java[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kls
+[?2004l[0m[34;42mdocs[0m  [34;42mlogs[0m  [34;42mrapports[0m  [34;42mrendus[0m  [34;42mscripts[0m  [34;42msrc[0m
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ lsjavac src/GenerateurLogs.java .[K> logs/gen. err
+[?2004lsrc/GenerateurLogs.java:13: error: unclosed string literal
+System.err.println("Usage : java -cp out GenerateurLogs <matricule>
+                   ^
+src/GenerateurLogs.java:14: error: unclosed string literal
+<nombreDeLignes>");
+                ^
+src/GenerateurLogs.java:64: error: unclosed string literal
+System.out.printf("%s - - [23/Nov/2026:%02d:%02d:%02d +0000] \"%s %s HTTP/1.1\"
+                  ^
+src/GenerateurLogs.java:65: error: unclosed string literal
+%d %d %dms%n",
+            ^
+src/GenerateurLogs.java:65: error: not a statement
+%d %d %dms%n",
+          ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+  ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+            ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                  ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                             ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                 ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                 ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                     ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                       ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                              ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                                ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                                      ^
+src/GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+^
+src/GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+      ^
+src/GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+        ^
+src/GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+              ^
+src/GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+                ^
+src/GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+                     ^
+23 errors
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cd logs
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ ls
+[?2004l[0m[01;32mgen.err[0m
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ ls[5@cd log[Cjavac src/GenerateurLogs.java > logs/gen.err[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cge[1P[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cen[1P[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgen.[1P[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgen.e[1P[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgen.er[C[K[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgen.err[K[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgen.er
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@n[1@a[1@n[1@o[1@ 
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;54H(B[0;7m[ Reading... ](B[m[28;53H(B[0;7m[ Read 0 lines ](B[m[H(B[0;7m  GNU nano 8.7.1                                            gen.err                                                     [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^F(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d[?12l[?25h[?25l[28d[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ nano gen.errls[K[5@cd log[Cjavac src/GenerateurLogs.java > logs/gen.err[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C
+[?2004lbash: logs/gen.err: No such file or directory
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ cd..
+[?2004lcd..: command not found
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ cd ..
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cd ..[1P[C[Cjavac src/GenerateurLogs.java > logs/gen.err\[K
+[?2004lsrc/GenerateurLogs.java:13: error: unclosed string literal
+System.err.println("Usage : java -cp out GenerateurLogs <matricule>
+                   ^
+src/GenerateurLogs.java:14: error: unclosed string literal
+<nombreDeLignes>");
+                ^
+src/GenerateurLogs.java:64: error: unclosed string literal
+System.out.printf("%s - - [23/Nov/2026:%02d:%02d:%02d +0000] \"%s %s HTTP/1.1\"
+                  ^
+src/GenerateurLogs.java:65: error: unclosed string literal
+%d %d %dms%n",
+            ^
+src/GenerateurLogs.java:65: error: not a statement
+%d %d %dms%n",
+          ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+  ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+            ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                  ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                             ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                 ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                 ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                     ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                       ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                              ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                                ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                                      ^
+src/GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+^
+src/GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+      ^
+src/GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+        ^
+src/GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+              ^
+src/GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+                ^
+src/GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+                     ^
+23 errors
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ javac src/GenerateurLogs.java > logs/gen.err 2>&1
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ javac src/GenerateurLogs.java > logs/gen.err 2>&1[C[C[C[K[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cd ..[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cjavac src/GenerateurLogs.java > logs/gen.err 2>&1[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cjavac src/GenerateurLogs.java > logs/gen.err 2>&1[C[C[C[K[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cd ..[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[Cjavac src/GenerateurLogs.java > logs/gen.err[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ nano gen.err[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[K[5@cd log[C
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ cd logsjavac src/GenerateurLogs.java > logs/gen.err 2>&1[K[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ cd ..[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[Cjavac src/GenerateurLogs.java > logs/gen.err[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ [24Pnano gen.err
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;54H(B[0;7m[ Reading... ](B[m[28;52H(B[0;7m[ Read 70 lines ](B[m[H(B[0;7m  GNU nano 8.7.1                                            gen.err                                                     [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^F(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2dsrc/GenerateurLogs.java:13: error: unclosed string literal[3dSystem.err.println("Usage : java -cp out GenerateurLogs <matricule>[4;20H^[5dsrc/GenerateurLogs.java:14: error: unclosed string literal[6d<nombreDeLignes>");[7;17H^[8dsrc/GenerateurLogs.java:64: error: unclosed string literal[9dSystem.out.printf("%s - - [23/Nov/2026:%02d:%02d:%02d +0000] \"%s %s HTTP/1.1\"[10;19H^[11dsrc/GenerateurLogs.java:65: error: unclosed string literal[12d%d %d %dms%n",[13d^[14dsrc/GenerateurLogs.java:65: error: not a statement[15d%d %d %dms%n",[16;11H^[17dsrc/GenerateurLogs.java:66: error: not a statement[18dip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,[19d^[20dsrc/GenerateurLogs.java:66: error: ';' expected[21dip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,[22;3H^[23dsrc/GenerateurLogs.java:66: error: not a statement[24dip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,[25;13H^[26dsrc/GenerateurLogs.java:66: error: ';' expected[27dip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,[2d[?12l[?25h[?25l[28d[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ nano gen.err[5Pcd logsjavac src/GenerateurLogs.java > logs/gen.err 2>&1[C[C[C[C[C[K 2>&1[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ cd logs[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnano gen.err[5Pcd logs[K[K[K[K..
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cd ..nano gen.err[5Pcd logsjavac src/GenerateurLogs.java > logs/gen.err 2>&1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C\ > logs/gen.[1@e[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C > logs/gen.e[1P[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C > logs/gen.er[C[1P[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C > logs/gen.err[1P[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C > logs/gen.er
+[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C > logs/gen.err 2[1P[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CM > logs/gen.err [1@2[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca > logs/gen.e
+[1@r[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci > logs/gen.er[1@r[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn > logs/gen.e[C[1@r[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C( > logs/gen.[1@e[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C) > logs/gen[1@.[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C") > logs/ge[1@n[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C") > logs/g[1@e[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd logs[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cjavac src/GenerateurLogs.Main("") > logs/gen.err 2>&1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm") > logs/[1@g[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co") > logs[1@/[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cu") > log[1@s[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ch") > lo[1@g[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca") > l[1@o[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm") > [1@l[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce") >[1@ [A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd") [1@>[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CN")[1@ [A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd"[1@)[1@i[1@a[1@y[1@e[1@D[1@B[1@E[1@,[1@2[1@0[1@0[1@0[1@"[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1@a[1@c[1@c[1@e[1@s[1@s[1@.[1@l[1@o[1@g
+[?2004lbash: syntax error near unexpected token `('
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ javac src/GenerateurLogs.Main("mouhamedNdiayeDBE",2000) > logs/access.log 2>&1[K[K[K[K[K
+[?2004lbash: syntax error near unexpected token `('
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ javac src/GenerateurLogs.Main("mouhamedNdiayeDBE",2000) > logs/access.log[C[C[C[C[C[C 2>&1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd logs
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ ls
+[?2004l[0m[01;32mgen.err[0m
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/logs[00m$ cd ..
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cd ..[3Pls[5@cd log[Cls[K[5@cd log[Cjavac src/GenerateurLogs.Main("mouhamedNdiayeDBE",2000) > logs/access.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C 2>&1[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cd ..[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnano gen.err[5Pcd logsjavac src/GenerateurLogs.java > logs/gen.err 2>&1[C[C[C[K[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cd ..[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[Cjavac src/GenerateurLogs.java > logs/gen.err[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K
+[?2004lsrc/GenerateurLogs.java:13: error: unclosed string literal
+System.err.println("Usage : java -cp out GenerateurLogs <matricule>
+                   ^
+src/GenerateurLogs.java:14: error: unclosed string literal
+<nombreDeLignes>");
+                ^
+src/GenerateurLogs.java:64: error: unclosed string literal
+System.out.printf("%s - - [23/Nov/2026:%02d:%02d:%02d +0000] \"%s %s HTTP/1.1\"
+                  ^
+src/GenerateurLogs.java:65: error: unclosed string literal
+%d %d %dms%n",
+            ^
+src/GenerateurLogs.java:65: error: not a statement
+%d %d %dms%n",
+          ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+  ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+            ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                  ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                             ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                 ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                 ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                     ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                       ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                              ^
+src/GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                                ^
+src/GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                                      ^
+src/GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+^
+src/GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+      ^
+src/GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+        ^
+src/GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+              ^
+src/GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+                ^
+src/GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+                     ^
+23 errors
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ javac src/GenerateurLogs.java[Kcd src
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[00m$ ls
+[?2004l[0m[01;32mGenerateurLogs.java[0m
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[00m$ mkdir -p out
+[?2004lac -encoding UTF-8 -d out src/GenerateurLogs.java[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[00m$ javac -encoding UTF-8 -d out src/GenerateurLogs.java
+[?2004lerror: file not found: src/GenerateurLogs.java
+Usage: javac <options> <source files>
+use --help for a list of possible options
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[00m$ nano src/GenerateurLogs.java
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;44H(B[0;1m[37m[41m[ Directory 'src' does not exist ][39;49m(B[m[H(B[0;7m  GNU nano 8.7.1                                    src/GenerateurLogs.java                                             [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^F(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d[?12l[?25h[?25l[28d[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[00m$ javac -encoding UTF-8 -d out src/GenerateurLogs.java[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/Genera[1P[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CGenerat[1P[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CGenerate[1P[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CGenerateu[1P[A]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+[?2004lGenerateurLogs.java:13: error: unclosed string literal
+System.err.println("Usage : java -cp out GenerateurLogs <matricule>
+                   ^
+GenerateurLogs.java:14: error: unclosed string literal
+<nombreDeLignes>");
+                ^
+GenerateurLogs.java:64: error: unclosed string literal
+System.out.printf("%s - - [23/Nov/2026:%02d:%02d:%02d +0000] \"%s %s HTTP/1.1\"
+                  ^
+GenerateurLogs.java:65: error: unclosed string literal
+%d %d %dms%n",
+            ^
+GenerateurLogs.java:65: error: not a statement
+%d %d %dms%n",
+          ^
+GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+^
+GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+  ^
+GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+            ^
+GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                  ^
+GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                             ^
+GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                 ^
+GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                 ^
+GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                     ^
+GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                       ^
+GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                              ^
+GenerateurLogs.java:66: error: not a statement
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                                ^
+GenerateurLogs.java:66: error: ';' expected
+ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin,
+                                                                      ^
+GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+^
+GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+      ^
+GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+        ^
+GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+              ^
+GenerateurLogs.java:67: error: not a statement
+statut, octets, duree);
+                ^
+GenerateurLogs.java:67: error: ';' expected
+statut, octets, duree);
+                     ^
+23 errors
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[00m$ java -cp out GenerateurLogs "$MATRICULE" 2000 > logs/access.log
+[?2004lc -l logs/accessbash: logs/access.log: No such file or directory
+.log
+head -n 1 logs/acce[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[00m$ wc -l logs/access.log
+[?2004lss.logwc: logs/access.log: No such file or directory
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[00m$ head -n 1 logs/access.logcle[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kca[Klear
+[?2004l[H[2J[3J[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/src[00m$ cd /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE
+[?2004lrf src/out
+
+cat > src/GenerateurLogs.java <<'EOF'
+import java.util.Random;
+
+/*[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ rm -rf src/out
+[?2004l*
+ * Génère un journal d'accès d'API back-end, propre à chaque étudiant.
+ * Usage : java -cp out GenerateurLogs <matricule> <nombreDeLignes>
+ */
+public class GenerateurLogs {
+    static final String[] ENDPOINTS = {
+        "/api/etudiants", "/api/etudiants/", "/api/notes", "/api/cours",
+        "/api/auth/login", "/[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ 
+[?2004lapi/paie[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cat > src/GenerateurLogs.java <<'EOF'
+[?2004l[?2004h> import java.util.Random;
+[?2004l[?2004h> 
+[?2004lments", "/api/health"
+    };[?2004h> /**
+[?2004l[?2004h>  * Génère un journal d'accès d'API back-end, propre à chaque étudiant.
+[?2004l[?2004h>  * Usage : java -cp out GenerateurLogs <matricule> <nombreDeLignes>
+[?2004l
+
+    pu[?2004h>  */
+[?2004lblic static void main(String[][?2004h> public class GenerateurLogs {
+[?2004l[?2004h>     static final String[] ENDPOINTS = {
+[?2004l[?2004h>         "/api/etudiants", "/api/etudiants/", "/api/notes", "/api/cours",
+[?2004l[?2004h>         "/api/auth/login", "/api/paiements", "/api/health"
+[?2004l[?2004h>     };
+[?2004l[?2004h> 
+[?2004l[?2004h>     public static void main(String[] args) {
+[?2004l[?2004h>         if (args.length != 2) {
+[?2004l[?2004h>             System.err.println("Usage : java -cp out GenerateurLogs <matricule> <nombreDeLignes>");
+[?2004l[?2004h>             System.exit(1);
+[?2004l[?2004h>         }
+[?2004l[?2004h>         int n;
+[?2004l[?2004h>         try {
+[?2004l[?2004h>             n = Integer.parseInt(args[1]);
+[?2004latExcep[?2004h>         } catch (NumberFormatException e) {
+[?2004l[?2004h>             System.err.println("Erreur : le nombre de lignes doit être un entier");
+[?2004l[?2004h>             System.exit(2);
+[?2004l[?2004h>             return;
+[?2004l[?2004h>         }
+[?2004l[?2004h>         Random r = new Random(args[0].hashCode());
+[?2004l[?2004h>         String suspecte = "197.149." + r.nextInt(256) + "." + (1 + r.nextInt(254));
+[?2004l[?2004h>         int seconde = 8 * 3600;
+[?2004l     for[?2004h>         for (int i = 0; i < n; i++) {
+[?2004l[?2004h>             seconde += 1 + r.nextInt(12);
+[?2004l[?2004h>             boolean attaque = r.nextInt(100) < 6;
+[?2004l[?2004h>             String ip = attaque ? suspecte : "10.0." + r.nextInt(4) + "." + (10 + r.nextInt(15));
+[?2004l       S[?2004h>             String chemin = attaque ? "/api/auth/login" : ENDPOINTS[r.nextInt(ENDPOINTS.length)];
+[?2004l[?2004h>             String methode = "GET";
+[?2004l[?2004h>             int statut = 200;
+[?2004l[?2004h>             int duree = 5 + r.nextInt(300);
+[?2004l[?2004h>             switch (chemin) {
+[?2004l[?2004h>                 case "/api/etudiants/":
+[?2004l[?2004h>                     chemin += (1 + r.nextInt(120));
+[?2004l[?2004h>                     statut = r.nextInt(100) < 15 ? 404 : 200;
+[?2004l[?2004h>                     break;
+[?2004l[?2004h>                 case "/api/notes":
+[?2004l[?2004h>                     chemin += "?page=" + (1 + r.nextInt(5));
+[?2004l[?2004h>                     statut = r.nextInt(100) < 8 ? 400 : 200;
+[?2004l[?2004h>                     break;
+[?2004l[?2004h>                 case "/api/auth/login":
+[?2004l[?2004h>                     methode = "POST";
+[?2004l[?2004h>                     statut = attaque ? 401 : (r.nextInt(100) < 20 ? 401 : 200);
+[?2004l[?2004h>                     break;
+[?2004l[?2004h>                 case "/api/paiements":
+[?2004l[?2004h>                     methode = r.nextBoolean() ? "POST" : "GET";
+[?2004l[?2004h>                     int t =
+[?2004l[?2004h> 
+[?2004l[?2004h> ^C[?2004l[?2004h[?2004l
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ ls
+[?2004l[0m[34;42mdocs[0m  [34;42mlogs[0m  [34;42mrapports[0m  [34;42mrendus[0m  [34;42mscripts[0m  [34;42msrc[0m
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cd /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE
+[?2004lrf src/out
+
+cat > src/GenerateurLogs.java <<'EOF'
+import[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ rm -rf src/out
+[?2004l java.util.Random;
+
+/**
+ * Génère un journal d'accès d'API back-end, propre à chaque étudiant.
+ * Usage : java -cp out GenerateurLogs <matricule> <nombr[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ 
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cat > src/GenerateurLogs.java <<'EOF'
+[?2004l[?2004h> import java.util.Random;
+[?2004l[?2004h> 
+[?2004l[?2004h> /**
+[?2004l[?2004h>  * Génère un journal d'accès d'API back-end, propre à chaque étudiant.
+[?2004l[?2004h>  * Usage : java -cp out GenerateurLogs <matricule> <nombreDeLignes>
+[?2004l[?2004h>  */
+[?2004l[?2004h> public class GenerateurLogs {
+[?2004l[?2004h>     static final String[] ENDPOINTS = {
+[?2004l[?2004h>         "/api/etudiants", "/api/etudiants/", "/api/notes", "/api/cours",
+[?2004l[?2004h>         "/api/auth/login", "/api/paiements", "/api/health"
+[?2004l[?2004h>     };
+[?2004l[?2004h> 
+[?2004l[?2004h>     public static void main(String[] args) {
+[?2004l[?2004h>         if (args.length != 2) {
+[?2004l[?2004h>             System.err.println("Usage : java -cp out GenerateurLogs <matricule> <nombreDeLignes>");
+[?2004l[?2004h>             System.exit(1);
+[?2004l[?2004h>         }
+[?2004l[?2004h>         int n;
+[?2004l[?2004h>         try {
+[?2004l[?2004h>             n = Integer.parseInt(args[1]);
+[?2004l[?2004h>         } catch (NumberFormatException e) {
+[?2004l[?2004h>             System.err.println("Erreur : le nombre de lignes doit être un entier");
+[?2004l[?2004h>             System.exit(2);
+[?2004l  return;
+      [?2004h>             return;
+[?2004l[?2004h>         }
+[?2004l[?2004h>         Random r = new Random(args[0].hashCode());
+[?2004l[?2004h>         String suspecte = "197.149." + r.nextInt(256) + "." + (1 + r.nextInt(254));
+[?2004l[?2004h>         int seconde = 8 * 3600;
+[?2004l[?2004h>         for (int i = 0; i < n; i++) {
+[?2004l[?2004h>             seconde += 1 + r.nextInt(12);
+[?2004l[?2004h>             boolean attaque = r.nextInt(100) < 6;
+[?2004l[?2004h>             String ip = attaque ? suspecte : "10.0." + r.nextInt(4) + "." + (10 + r.nextInt(15));
+[?2004l[?2004h>             String chemin = attaque ? "/api/auth/login" : ENDPOINTS[r.nextInt(ENDPOINTS.length)];
+[?2004l[?2004h>             String methode = "GET";
+[?2004l[?2004h>             int statut = 200;
+[?2004l[?2004h>             int duree = 5 + r.nextInt(300);
+[?2004l[?2004h>             switch (chemin) {
+[?2004l[?2004h>                 case "/api/etudiants/":
+[?2004l[?2004h>                     chemin += (1 + r.nextInt(120));
+[?2004l        [?2004h>                     statut = r.nextInt(100) < 15 ? 404 : 200;
+[?2004l[?2004h>                     break;
+[?2004l[?2004h>                 case "/api/notes":
+[?2004l[?2004h>                     chemin += "?page=" + (1 + r.nextInt(5));
+[?2004l[?2004h>                     statut = r.nextInt(100) < 8 ? 400 : 200;
+[?2004l[?2004h>                     break;
+[?2004l[?2004h>                 case "/api/auth/login":
+[?2004l        [?2004h>                     methode = "POST";
+[?2004l[?2004h>                     statut = attaque ? 401 : (r.nextInt(100) < 20 ? 401 : 200);
+[?2004l[?2004h>                     break;
+[?2004l[?2004h>                 case "/api/paiements":
+[?2004l[?2004h>                     methode = r.nextBoolean() ? "POST" : "GET";
+[?2004l[?2004h>                     int t = r.nextInt(100);
+[?2004l        [?2004h>                     statut = t < 6 ? 500 : (t < 10 ? 503 : (methode.equals("POST") ? 201 : 200));
+[?2004l[?2004h>                     if (r.nextInt(100) < 5) {
+[?2004l[?2004h>                         duree = 1500 + r.nextInt(1500);
+[?2004l[?2004h>                     }
+[?2004l[?2004h>                     break;
+[?2004l[?2004h>                 default:
+[?2004l[?2004h>                     break;
+[?2004l[?2004h>             }
+[?2004l[?2004h>             int octets = statut >= 400 ? 60 + r.nextInt(100) : 200 + r.nextInt(4000);
+[?2004l[?2004h>             System.out.printf("%s - - [23/Nov/2026:%02d:%02d:%02d +0000] \"%s %s HTTP/1.1\" %d %d %dms%n",
+[?2004l[?2004h>                 ip, seconde / 3600, (seconde / 60) % 60, seconde % 60, methode, chemin, statut, octets, duree);
+[?2004l     }
+[?2004h>         }
+[?2004l[?2004h>     }
+[?2004l[?2004h> }
+[?2004l[?2004h> EOF
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ clear
+[?2004l[H[2J[3J[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ mkdir -p out
+[?2004lac -encoding UTF-8 -d out src/GenerateurLogs.java[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ javac -encoding UTF-8 -d out src/GenerateurLogs.java
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ ls out
+[?2004l[0m[01;32mGenerateurLogs.class[0m
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ echo $MATRICULE
+[?2004l
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ echo 'export MATRICULE="mouhamedNdiayeDBE"' >> ~/.bashrc
+[?2004lHISTTIME[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ echo 'export HISTTIMEFORMAT="%F %T "' >> ~/.bashrc
+[?2004lrce ~/.bashrc
+e[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ source ~/.bashrc
+[?2004lcho $MATRICULE[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ echo $MATRICULE
+[?2004lmouhamedNdiayeDBE
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ ava -cp out GenerateurLogs 2> logs/gen.err
+[?2004lcho $?
+cat logs/gen.err[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ echo $?
+[?2004l127
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cat logs/gen.err
+[?2004lCommand 'ava' not found, but can be installed with:
+sudo apt install ava
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ java -cp out GenerateurLogs 2> logs/gen.err
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ echo $?
+[?2004l1
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cat logs/gen.err
+[?2004lUsage : java -cp out GenerateurLogs <matricule> <nombreDeLignes>
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ echo $MATRICULE
+[?2004lmouhamedNdiayeDBE
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ java -cp out GenerateurLogs "$MATRICULE" 2000 > logs/access.log
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ wc -l logs/access.log
+[?2004l2000 logs/access.log
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ head -n 1 logs/access.log
+[?2004l10.0.0.11 - - [23/Nov/2026:08:00:02 +0000] "GET /api/etudiants/104 HTTP/1.1" 200 787 28ms
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ git inn[Kit
+[?2004lInitialized empty Git repository in /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/.git/
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ nano .gitignore[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kscript -q --timing=docs/preuves/git.tm docs/preuves/git.log
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ mkdir /dbe-eval-mouhamedNdiayeDBE && cd /dbe-eval-mouhamedNdiayeDBE && mkdir src && scripts && logs && docs/preuves &&  rapports && rendus[A[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnano .gitignore
+[?2004l[?2004h[?1049h[22;0;0t[1;30r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[28;55H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 8.7.1                                          .gitignore                                                    [1;119H(B[m[29d(B[0;7m^G(B[m Help[29;16H(B[0;7m^O(B[m Write Out   (B[0;7m^F(B[m Where Is    (B[0;7m^K(B[m Cut[29;61H(B[0;7m^T(B[m Execute     (B[0;7m^C(B[m Location    (B[0;7mM-U(B[m Undo[106G(B[0;7mM-A(B[m Set Mark[30d(B[0;7m^X(B[m Exit[30;16H(B[0;7m^R(B[m Read File   (B[0;7m^\(B[m Replace     (B[0;7m^U(B[m Paste[61G(B[0;7m^J(B[m Justify     (B[0;7m^/(B[m Go To Line  (B[0;7mM-E(B[m Redo[106G(B[0;7mM-6(B[m Copy[2d[?12l[?25h[?25l[1;70H(B[0;7m*[119G(B[m[?12l[?25h[2do[?25l[?12l[?25hu[?25l[?12l[?25ht[?25l[?12l[?25h/[?25l[3d[?12l[?25h[?25l[?12l[?25h*[?25l[?12l[?25h.[?25l[?12l[?25hc[?25l[?12l[?25hl[?25l[?12l[?25ha[?25l[?12l[?25hs[?25l[?12l[?25hs[?25l[4d[?12l[?25h[?25l[?12l[?25hl[?25l[?12l[?25ho[?25l[?12l[?25hg[?25l[?12l[?25hs[?25l[?12l[?25h/[?25l[28d(B[0;7mSave modified buffer?                                                                                                   [29;1H Y(B[m Yes[K[30d(B[0;7m N(B[m No  [30;16H (B[0;7m^C(B[m Cancel[K[28;23H[?12l[?25h[?25l[29d(B[0;7m^G(B[m Help[29;25H(B[0;7mM-D(B[m DOS Format[29;49H(B[0;7mM-A(B[m Append[29;73H(B[0;7mM-B(B[m Backup File[29;97H(B[0;7m^T(B[m Browse[30d(B[0;7m^C(B[m Cancel[17G        (B[0;7mM-M(B[m Mac Format[30;49H(B[0;7mM-P(B[m Prepend[30;73H(B[0;7m^Q(B[m Discard buffer[29;106H[A(B[0;7mWrite to File: .gitignore(B[m[?12l[?25h[?25l[28;53H[1K (B[0;7m[ Writing... ](B[m[K[1;70H(B[0;7m [119G(B[m[28;52H(B[0;7m[ Wrote 3 lines ](B[m[J[30d[?12l[?25h[30;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ git commit -m "commit code java"
+[?2004lOn branch main
+
+Initial commit
+
+Untracked files:
+  (u

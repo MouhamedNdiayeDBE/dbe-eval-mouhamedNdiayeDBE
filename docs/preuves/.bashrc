@@ -1,0 +1,2 @@
+MATRICULE=mouhamedNdiayeDBE
+HISTTIMEFORMAT="%F %T "
