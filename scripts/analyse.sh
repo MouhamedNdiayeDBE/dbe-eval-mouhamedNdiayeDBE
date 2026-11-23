@@ -5,7 +5,7 @@ TOP=3
 FICHIER=""
 
 usage() {
-    echo "Usage : bash scripts/analyse.sh <fichier.log> [--top N]" >&2
+    echo "Usage : bash scripts/analyse.sh <fichier.log> [--top N] (3 par défaut, ex. --top 5)" >&2
     echo "Exemple : bash scripts/analyse.sh logs/access.log --top 5" >&2
     exit 1
 }
