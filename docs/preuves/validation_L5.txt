@@ -1,8 +1,11 @@
-PID=1032
-1032 bash scripts/surveille.sh logs/access.log logs/surveillance.log
-    PID    PPID STAT     ELAPSED
-   1032    1023 S          00:01
-Après SIGTERM :
-[2026-11-23 15:01:15] 2000 lignes dans logs/access.log
-[2026-11-23 15:01:16] arrêt propre
-bash-n-surveille=OK
+L5 — bash -n scripts/surveille.sh : OK
+L5 — PID capturé : 1894
+L5 — résultat pgrep :
+1894 bash scripts/surveille.sh logs/access.log logs/surveillance.log
+L5 — résultat ps :
+   1894    1811 S          00:01
+L5 — dernières lignes après SIGTERM :
+[2026-11-23 15:17:37] 2000 lignes dans logs/access.log
+[2026-11-23 15:17:38] arrêt propre
+
+Reproduction exécutée dans un environnement isolé ; ne remplace pas le PID et l'enregistrement de la machine WSL de l'étudiant.
