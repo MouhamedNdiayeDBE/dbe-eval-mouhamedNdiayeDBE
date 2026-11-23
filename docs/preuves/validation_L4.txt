@@ -1,21 +1,17 @@
-L4 — contrôle de bash -n
-bash-n-code=0
-L4 — cas correct
-Rapport écrit dans rapports/rapport_mouhamedNdiayeDBE_20261123_1455.txt
-code=0
-L4 — sans argument
+L4 — bash -n : 0
+L4 — cas correct : 0
+Rapport écrit dans rapports/rapport_mouhamedNdiayeDBE_20261123_1517.txt
+L4 — sans argument : 1
 Usage : bash scripts/analyse.sh <fichier.log> [--top N] (3 par défaut, ex. --top 5)
 Exemple : bash scripts/analyse.sh logs/access.log --top 5
-code=1
-L4 — fichier absent
+L4 — fichier absent : 2
 Erreur : fichier introuvable : logs/absent.log
-code=2
-L4 — fichier vide
+L4 — fichier vide : 3
 Erreur : fichier vide : logs/vide.log
-code=3
-L4 — MATRICULE absent : code=1
+L4 — MATRICULE absent : 1
 Erreur : la variable MATRICULE n'est pas définie
-L4 — option --top 5 : code=0
-Rapport écrit dans rapports/rapport_mouhamedNdiayeDBE_20261123_1459.txt
-L4 — option --top 0 : code=0
-Rapport écrit dans rapports/rapport_mouhamedNdiayeDBE_20261123_1459.txt
+L4 — --top 5 : 0
+L4 — --top 0 refusé : 1
+Usage : bash scripts/analyse.sh <fichier.log> [--top N] (3 par défaut, ex. --top 5)
+Exemple : bash scripts/analyse.sh logs/access.log --top 5
+L4 — --top abc refusé : 1
