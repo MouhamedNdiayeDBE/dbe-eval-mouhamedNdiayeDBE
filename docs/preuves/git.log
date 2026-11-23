@@ -8,4 +8,110 @@ Initial commit
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	[31
+	[31m.gitignore[m
+	[31mdocs/[m
+	[31msrc/[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ git add .
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ git add .commit -m "commit code java"
+[?2004l[main (root-commit) dc4821e] commit code java
+ 8 files changed, 2834 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 docs/linux.md
+ create mode 100644 docs/preuves/.bashrc
+ create mode 100644 docs/preuves/git.log
+ create mode 100644 docs/preuves/git.tm
+ create mode 100644 docs/preuves/linux.log
+ create mode 100644 docs/preuves/linux.tm
+ create mode 100644 src/GenerateurLogs.java
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ git commit -m "commit code java"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"s"c"r"i"p"t"
+[?2004lOn branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   docs/preuves/git.log[m
+	[31mmodified:   docs/preuves/git.tm[m
+	[31mmodified:   docs/preuves/linux.log[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ ls scripy
+[?2004lls: cannot access 'scripy': No such file or directory
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ ls scripy[Kt
+[?2004lls: cannot access 'script': No such file or directory
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ ls script[1@/
+[?2004lls: cannot access '/script': No such file or directory
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ ls
+[?2004l[0m[34;42mdocs[0m  [34;42mlogs[0m  [34;42mout[0m  [34;42mrapports[0m  [34;42mrendus[0m  [34;42mscripts[0m  [34;42msrc[0m
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ ls /scripts
+[?2004lls: cannot access '/scripts': No such file or directory
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ ls /scripts[K[C /script[1P[C[C[C[C[C[C[C[1P[1P[1@c[1@d
+[?2004lbash: cd: script: No such file or directory
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ cd scripts
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/scripts[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/scripts[00m$ ls
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/scripts[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE/scripts[00m$ cd ..
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ rm scripts
+[?2004lrm: cannot remove 'scripts': Is a directory
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ rm scripts[1@/[1@r[1@f[1@ 
+[?2004lrm: cannot remove '/rf': No such file or directory
+rm: cannot remove 'scripts': Is a directory
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ ls
+[?2004l[0m[34;42mdocs[0m  [34;42mlogs[0m  [34;42mout[0m  [34;42mrapports[0m  [34;42mrendus[0m  [34;42mscripts[0m  [34;42msrc[0m
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ ls[12@rm /rf script[C[C[1P[1P[1@r[1@s
+[?2004lrm: cannot remove '/rs': No such file or directory
+rm: cannot remove 'scripts': Is a directory
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ rm /rs scripts[1P
+[?2004lrm: cannot remove '/s': No such file or directory
+rm: cannot remove 'scripts': Is a directory
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ ls
+[?2004l[0m[34;42mdocs[0m  [34;42mlogs[0m  [34;42mout[0m  [34;42mrapports[0m  [34;42mrendus[0m  [34;42msrc[0m
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ ls[11@rm /s script[C[1@r[C[C[C[C[C[C[C[C[Cls[K[12@rm /rf script[C[4P[C[C[C[C[C[C[C[5Pcd ..[3Pls[8@cd script[C[Ksls[Kcd ..rm scripts[4@/rf [C[C[C[C[C[C[Cls[K[12@rm /rs script[C[1P[C[C[C[C[C[C[C[C[Cls[K[Kmkdir scrips[Kts
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ mkdir scriptsls[K[11@rm /s script[C[1@r[C[C[C[C[C[C[C[C[Cls[K[12@rm /rf script[C[4P[C[C[C[C[C[C[C[5Pcd ..[3Pls[8@cd script[C[Kls /scripts[K /script[1P[C[C[C[C[C[Cygit commit -m "script"[10@commit code java[C[10Pscript[C[1@a[1@j[1@o[1@u[1@t[1@ [1@d[1@e[1@ [C[C[C[C[C[Cs"[C
+[?2004lOn branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   docs/preuves/git.log[m
+	[31mmodified:   docs/preuves/git.tm[m
+	[31mmodified:   docs/preuves/linux.log[m
+	[31mmodified:   docs/preuves/linux.tm[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ git add
+[?2004lNothing specified, nothing added.
+[33mhint: Maybe you wanted to say 'git add .'?[m
+[33mhint: Disable this message with "git config set advice.addEmptyPathspec false"[m
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ git addcommit -m "ajout de scripts"
+[?2004lOn branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   docs/preuves/git.log[m
+	[31mmodified:   docs/preuves/git.tm[m
+	[31mmodified:   docs/preuves/linux.log[m
+	[31mmodified:   docs/preuves/linux.tm[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ git commit -m "ajout de scripts"add[Kcommit -m "ajout de scripts"add[K script
+[?2004lfatal: pathspec 'script' did not match any files
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ git add scriptcommit -m "ajout de scripts"[18Padd scripts
+[?2004l[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ git add scripts[Kcommit -m "ajout de scripts"
+[?2004lOn branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   docs/preuves/git.log[m
+	[31mmodified:   docs/preuves/git.tm[m
+	[31mmodified:   docs/preuves/linux.log[m
+	[31mmodified:   docs/preuves/linux.tm[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ git commit -m "ajout de scripts"[1P[1@a
+[?2004lfatal: paths 'ajout de scripts ...' with -a does not make sense
+[?2004h]0;linux_post@DESKTOP-PGLC8RC: /mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[01;32mlinux_post@DESKTOP-PGLC8RC[00m:[01;34m/mnt/c/Users/User/test0/dbe-eval-mouhamedNdiayeDBE[00m$ git commit -a "ajout de scripts"m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lOn branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   docs/preuves/git.log[m
+	[31mmodified:   docs/preuves/git.tm[m
