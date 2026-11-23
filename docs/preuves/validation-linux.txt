@@ -1,30 +1,11 @@
-Validation technique Linux reproduite dans un environnement Linux isolé le 2026-11-23 14:55:44 UTC.
-MATRICULE repris du fichier de configuration consigné dans le dépôt : mouhamedNdiayeDBE
-Compilation Java : OK
+Validation technique reproductible exécutée dans un environnement Linux isolé le 2026-11-23.
+MATRICULE repris du snapshot docs/preuves/.bashrc : mouhamedNdiayeDBE
+Compilation Java 17 : OK
 java -cp out GenerateurLogs sans argument : code 1
-Nombre de lignes générées : 2000
+Lignes générées : 2000
 Première ligne : 10.0.0.11 - - [23/Nov/2026:08:00:02 +0000] "GET /api/etudiants/104 HTTP/1.1" 200 787 28ms
---- Rapport généré ---
-=== Rapport d'analyse ===
-Date      : 2026-11-23 14:55:43
-Machine   : root@f189bcd2db5f
-Matricule : mouhamedNdiayeDBE
-Fichier   : logs/access.log
-SHA256    : da36ac7ede3b00652153e792f7355a5e80bcb1c0a2026a20c83e89c6b7ccffcd
-
---- Requêtes par famille ---
-2xx : 1733
-3xx : 0
-4xx : 238
-5xx : 29
-
---- Top 3 endpoints ---
-    362 /api/auth/login
-    292 /api/cours
-    284 /api/etudiants
-
---- IP suspecte (plus de 401 sur /api/auth/login) ---
-    113 197.149.97.9
-Rapport : rapports/rapport_mouhamedNdiayeDBE_20261123_1455.txt
-Empreinte du journal : da36ac7ede3b00652153e792f7355a5e80bcb1c0a2026a20c83e89c6b7ccffcd
-IMPORTANT : test isolé, ne remplace pas la session WSL personnelle ni son historique bash.
+SHA-256 du journal : da36ac7ede3b00652153e792f7355a5e80bcb1c0a2026a20c83e89c6b7ccffcd
+Rapport : rapports/rapport_mouhamedNdiayeDBE_20261123_1517.txt
+Tests L4 : bon fichier=0 ; sans argument=1 ; absent=2 ; vide=3 ; MATRICULE absent=1 ; --top 5=0 ; --top 0=1 ; --top abc=1
+L5 : processus arrêté par SIGTERM et message arrêt propre confirmé.
+IMPORTANT : ces tests sont exécutés dans un environnement isolé ; ils ne remplacent pas la session WSL personnelle, les enregistrements script, l'historique Bash ni le reflog Git de l'étudiant.

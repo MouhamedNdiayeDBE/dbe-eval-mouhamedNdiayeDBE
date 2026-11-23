@@ -149,7 +149,7 @@ bash scripts/analyse.sh logs/vide.log
 echo "code=$?"
 ~~~
 
-Résultats : syntaxe 0 ; cas correct 0 ; sans argument 1 ; fichier absent 2 ; fichier vide 3. Contrôle supplémentaire : MATRICULE absent retourne 1 ; --top 5 et --top 0 sont acceptés. Voir docs/preuves/validation_L4.txt.
+Résultats : syntaxe 0 ; cas correct 0 ; sans argument 1 ; fichier absent 2 ; fichier vide 3. Contrôles complémentaires : MATRICULE absent retourne 1 ; --top 5 fonctionne ; --top 0, une valeur non numérique ou une option inconnue sont refusés avec le code 1. Voir docs/preuves/validation_L4.txt.
 
 ## L5 — Processus et signaux (3 pts)
 
