@@ -87,6 +87,7 @@ main() {
         top_endpoints
         ip_suspecte
         temps_moyen
+        par_heure
     } > "$RAPPORT"
     echo "Rapport écrit dans $RAPPORT"
 }
