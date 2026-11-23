@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-TOP=0
+TOP=3
 FICHIER=""
 
 usage() {
