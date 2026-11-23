@@ -1,121 +1,161 @@
-# Partie 4 — Git et GitHub pratique
+# Partie 4 — Git/GitHub pratique individuelle (25 points)
 
-Ce guide récapitule les opérations demandées. Les preuves et sorties doivent provenir de l'exécution effective par l'étudiant.
+Cette partie note les opérations Git réelles et leur historique, pas uniquement l'état final des fichiers. Dépôt : MouhamedNdiayeDBE/dbe-eval-mouhamedNdiayeDBE.
 
-## G1 — Identité et signatures SSH
+## G1 — Configuration et signature (2 pts)
 
-```bash
+À exécuter sur le poste personnel :
+
+~~~bash
 git config --global user.name "Mouhamed Ndiaye"
-git config --global user.email "ADRESSE_EMAIL_VERIFIEE_GITHUB"
+git config --global user.email "EMAIL_VERIFIE_DANS_GITHUB"
 git config --global init.defaultBranch main
 git config --global gpg.format ssh
 git config --global user.signingkey ~/.ssh/id_ed25519.pub
 git config --global commit.gpgsign true
 git config --global tag.gpgSign true
 ssh-keygen -lf ~/.ssh/id_ed25519.pub
-```
+~~~
 
-Sur GitHub, enregistrer la clé publique correspondante dans Settings → SSH and GPG keys comme **Authentication key** et **Signing key**. Ne jamais publier la clé privée.
+Sur GitHub, dans Settings → SSH and GPG keys, la clé publique exacte doit être ajoutée comme Authentication key et Signing key. Ne jamais copier la clé privée dans le dépôt.
 
-## G2–G3 — Dépôt individuel
+**État observé :** plusieurs commits personnels et le tag v1.0 portent une signature SSH, mais GitHub répond verified=false, raison no_user. Les commits initiaux dc4821e, 4d4cc05, c76632b et 4ba3b52 sont non signés. Les signatures web-flow sont vérifiées. La configuration de signature n'est donc pas validée sur le compte GitHub.
 
-Le dépôt personnel est privé, sa branche par défaut est `main`, et le collaborateur `pape1283` a le droit `write`.
+## G2 — Initialiser le dépôt (2 pts)
 
-La variable de dépôt `MATRICULE` doit être créée dans Settings → Secrets and variables → Actions → Variables. Vérifier sa présence sans afficher sa valeur dans les journaux.
+Le dépôt distant est privé, main est la branche par défaut et .gitignore contient :
 
-```bash
-git status
-git remote -v
-git branch --show-current
-git log --oneline --decorate -10
-```
+~~~gitignore
+out/
+*.class
+logs/
+~~~
 
-Le sujet demande des commits atomiques distincts pour le code Java, les scripts, la documentation et l'archive. Chaque commit personnel et le tag doivent apparaître Verified sur GitHub.
+Les commits initiaux visibles comprennent le code Java (dc4821e), les scripts (4d4cc05), la documentation (c76632b) et les preuves/compléments (4ba3b52). L'archive de rendu n'était pas dans ce dernier commit lors de l'audit initial ; une archive de validation a été ajoutée dans la branche de correction.
 
-## G4 — Intégration continue
+Vérifications locales :
 
-Le workflow est `.github/workflows/ci.yml`. Il doit compiler avec Java 17, générer 2 000 lignes avec la variable `MATRICULE`, exécuter le script d'analyse et publier le rapport en artefact.
+~~~bash
+git status --short
+git log --oneline --decorate --all
+git check-ignore out/GenerateurLogs.class logs/access.log
+~~~
 
-Vérification :
+## G3 — Publier (2 pts)
 
-```bash
-git ls-files .github/workflows
-git diff --check
-```
+**État vérifié :** dépôt privé ; branche par défaut main ; collaborateur pape1283 avec permission write.
 
-Ouvrir une PR vers `main`, attendre un pipeline vert, puis seulement fusionner.
+La variable de dépôt MATRICULE doit être vérifiée dans Settings → Secrets and variables → Actions → Variables. Le connecteur ne donne pas accès à la liste des variables Actions ; la valeur utilisée dans docs/preuves/.bashrc est mouhamedNdiayeDBE. Ne pas transformer cette variable en secret si le workflow utilise vars.MATRICULE.
 
-## G5 — Rebase interactif
+## G4 — Intégration continue (4 pts)
 
-À réaliser sans réécrire `main` :
+Le workflow actif est .github/workflows/ci.yml. Il se trouve au bon emplacement. Un doublon dans .github/workflow/ci.yml a été supprimé dans la PR #2. Le workflow vérifie la variable, la syntaxe Bash, compile Java 17, génère 2 000 lignes, exécute analyse.sh, teste l'arrêt SIGTERM et publie le rapport comme artefact.
 
-```bash
+La PR #1 a été fusionnée, mais les exécutions initiales étaient rouges. La PR #2 (fix/evaluation-deliverables-ci) est ouverte. Les runs observés ont échoué avant d'exécuter une étape : runner_id=0, steps=[], aucun log exploitable. Il reste à obtenir une exécution verte sur GitHub avant de considérer G4 comme validé.
+
+Sur le poste, vérifier que Actions est activé et que la variable MATRICULE est définie. Puis ouvrir la PR vers main, attendre un pipeline vert et seulement ensuite fusionner. Le rapport d'artefact doit correspondre au rapport local.
+
+## G5 — Fonctionnalité, réécriture d'historique et rebase (5 pts)
+
+La fonction par_heure est présente dans scripts/analyse.sh et le commit cb9c6b3 l'a ajoutée. Cependant, l'historique actuel contient wip 1 (9b71b7a) et wip 2 (bef5ad7) directement dans l'ascendance de main. L'audit n'a pas trouvé de branche feature/heures ni de preuve d'un git rebase -i main. Le résultat fonctionnel est présent, mais la procédure n'est pas démontrée et main conserve les messages WIP.
+
+La procédure correcte, à réaliser avant intégration :
+
+~~~bash
+git switch main
+git pull --ff-only origin main
 git switch -c feature/heures
-# Ajouter la fonctionnalité en trois commits de travail
+# Modifier analyse.sh en trois étapes et créer les commits demandés.
+git add scripts/analyse.sh && git commit -S -m "wip 1"
+# Deuxième modification :
+git add scripts/analyse.sh && git commit -S -m "wip 2"
+# Troisième modification :
+git add scripts/analyse.sh && git commit -S -m "wip 3"
 git rebase -i main
-# Remplacer les commits wip par un commit final clair dans l'éditeur
+# Garder le premier commit en pick, passer les deux suivants en squash.
+# Message final : Ajoute le regroupement des requêtes par heure.
 git switch main
 git merge --ff-only feature/heures
-```
+git log --oneline --decorate -10
+~~~
 
-Le résultat attendu sur `main` est un historique linéaire sans messages `wip`.
+Le README demandé par le sujet a été ajouté dans la PR #2 sous README.md ; cette PR n'est pas encore fusionnée. Ne pas faire de push --force sur main. Les WIP déjà publiés sur main ne sont pas supprimés dans cette correction afin de préserver l'historique distant.
 
-## G6 — Stash
+## G6 — Mettre un travail de côté (2 pts)
 
-```bash
-# Modifier README.md sans commiter
+L'audit de docs/preuves/git.log n'a pas retrouvé git stash push, git stash list ni git stash pop. Exécuter la séquence dans le dépôt local et coller la vraie sortie dans docs/git.md :
+
+~~~bash
+# Modifier README.md sans commiter.
 git stash push -m "readme en cours"
 git stash list
-# Conserver la sortie réelle dans docs/git.md
-# Effectuer G7
+# Effectuer G7.
 git stash pop
-```
+git status --short
+~~~
 
-## G7 — Correctif et cherry-pick
+Ne pas inventer une sortie de stash : elle dépend du contenu réel du worktree.
 
-```bash
-git switch -c release/1.0 main~1
-git switch main
-# Corriger le message d'usage, puis :
-git add scripts/analyse.sh
-git commit -m "Corrige le message d'usage de analyse.sh (exemple --top 5)"
-git switch release/1.0
-git cherry-pick -x <SHA_DU_CORRECTIF>
-```
+## G7 — Correctif et cherry-pick (2 pts)
 
-Remplacer `<SHA_DU_CORRECTIF>` par le SHA effectivement créé.
+Le commit de correction du message d'usage existe sur main : fce7935 (exemple --top 5). La branche distante release/1.0 a été créée à partir de cb9c6b3, parent de fce7935. Elle pointe sur 37bc3f5, commit dont l'arbre correspond au correctif et dont le message contient le trailer (cherry picked from commit fce7935...). Ce commit équivalent a été construit via l'API GitHub, pas par l'exécution de la commande dans le terminal WSL ; la preuve interactive de git cherry-pick -x reste donc à réaliser localement.
 
-## G8 — Annulation publiée
+Pour contrôler le résultat distant :
 
-Le changement erroné doit être annulé par un commit de revert, sans reset ni push forcé :
+~~~bash
+git fetch origin
+git switch -c release/1.0 --track origin/release/1.0
+git show -1 --format=fuller
+~~~
 
-```bash
-git revert <SHA_DU_COMMIT_ERRONE>
-git push origin main
-```
+Le trailer de cherry-pick est présent dans le message du commit. La procédure de commande demandée par le sujet doit encore être enregistrée dans la session personnelle si l'enseignant exige la preuve de l'exécution de git cherry-pick -x.
 
-## G9 — Tag et Release
+## G8 — Annuler un commit publié (2 pts)
 
-```bash
-git tag -s v1.0 -m "Version 1.0"
+Cette étape est démontrée : le commit 7b26e58 (Change le top par défaut) a été annulé par e38f3f8 (Revert "Change le top par défaut"). Le revert conserve l'historique et rétablit le top par défaut à 3. Les deux commits sont visibles sur main.
+
+## G9 — Version signée (2 pts)
+
+Le tag signé v1.0 existe. Son objet contient une signature SSH, mais GitHub indique verified=false, raison no_user. Enregistrer la clé publique comme Signing key sur GitHub, puis revérifier le tag :
+
+~~~bash
+git tag -v v1.0
 git push origin v1.0
-```
+~~~
 
-Créer ensuite la Release GitHub `v1.0` à partir du tag et joindre l'archive de rendu.
+Créer ensuite sur GitHub une Release v1.0 à partir de ce tag et joindre rendus/linux_${MATRICULE}.tar.gz. La création de la Release avec pièce jointe n'est pas disponible via la connexion GitHub utilisée pour cette correction ; elle reste à effectuer dans l'interface GitHub.
 
-## G10 — Preuves
+## G10 — Preuves (2 pts)
 
-```bash
+Les enregistrements docs/preuves/git.log et git.tm existent, mais reflog.txt et historique_git.txt ne sont pas présents. Les reflogs sont locaux et ne sont pas disponibles à travers le dépôt distant. Sur le PC, à la fin de la session enregistrée :
+
+~~~bash
 git reflog -n 60 > docs/preuves/reflog.txt
 history > docs/preuves/historique_git.txt
+exit
 git add docs && git commit -S -m "Ajoute les preuves de la partie Git"
 git push --all
 git push --tags
 git rev-parse --short HEAD
-```
+~~~
 
-Recopier le SHA court dans la fiche de contrôle.
+Recopier le SHA court sur la fiche de contrôle. Ne jamais fabriquer reflog.txt à partir de git log : ce ne sont pas les mêmes informations.
 
-## État des preuves observé lors de l'audit
+## État au 23 novembre 2026
 
-Au 23 novembre 2026, le dépôt contient plusieurs commits et le tag `v1.0`, mais les journaux consultés ne prouvent pas l'exécution complète de G5, G6 et G7. Le tag existe mais GitHub le signalait non vérifié (`no_user`). La PR CI #1 a été fusionnée alors que son exécution était en échec. Compléter les preuves uniquement après avoir exécuté réellement les commandes.
+| Exigence | État vérifié |
+|---|---|
+| Dépôt privé, main, collaborateur pape1283 | OK |
+| .gitignore, code Java, scripts | OK |
+| README complet et documentation | ajoutés sur la PR #2, non fusionnés |
+| Workflow CI au bon emplacement | OK, mais runs rouges avant les étapes |
+| par_heure dans le rapport | OK |
+| Rebase interactif des 3 WIP sur feature/heures | non démontré ; deux WIP déjà sur main |
+| Stash / stash pop | non démontré |
+| Branche release/1.0 et commit avec trailer cherry-pick | résultat distant présent (37bc3f5), commande locale non démontrée |
+| Revert de G8 | OK |
+| Tag signé v1.0 | présent, signature non vérifiée par GitHub (no_user) |
+| Release GitHub avec archive | absente |
+| Reflog et historique Bash exportés | absents |
+
+La branche de correction ne réécrit pas main et ne prétend pas effectuer les opérations qui exigent le shell personnel, la clé SSH privée ou les droits de création de Release de l'étudiant.

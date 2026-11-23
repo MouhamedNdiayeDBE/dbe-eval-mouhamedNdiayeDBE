@@ -1,0 +1,34 @@
+L3a
+   1632 200
+    169 401
+    101 201
+     43 404
+     26 400
+     15 500
+     14 503
+L3b
+    362 /api/auth/login
+    292 /api/cours
+    284 /api/etudiants
+L3c
+61
+L3d
+    113 197.149.97.9
+L3e
+161.9 ms
+L3f
+10.0.1.11 - - [23/Nov/2026:08:29:33 +0000] "GET /api/paiements HTTP/1.1" 200 392 2940ms
+L3g
+    564 08
+    574 09
+    550 10
+    312 11
+L3h
+29 logs/erreurs_5xx.log
+L3i
+x.x.x.x - - [23/Nov/2026:08:00:02 +0000] "GET /api/etudiants/104 HTTP/1.1" 200 787 28ms
+L3j
+  2000 ./logs/access.log
+    29 ./logs/erreurs_5xx.log
+  2000 ./logs/access_anonyme.log
+  4029 total

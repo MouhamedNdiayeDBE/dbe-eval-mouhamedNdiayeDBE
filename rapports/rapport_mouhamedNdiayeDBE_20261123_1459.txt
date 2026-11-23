@@ -1,0 +1,19 @@
+=== Rapport d'analyse ===
+Date      : 2026-11-23 14:59:06
+Machine   : root@f189bcd2db5f
+Matricule : mouhamedNdiayeDBE
+Fichier   : logs/access.log
+SHA256    : da36ac7ede3b00652153e792f7355a5e80bcb1c0a2026a20c83e89c6b7ccffcd
+
+--- Requêtes par famille ---
+2xx : 1733
+3xx : 0
+4xx : 238
+5xx : 29
+
+--- Top 5 endpoints ---
+    362 /api/auth/login
+    292 /api/cours
+    284 /api/etudiants
+    265 /api/etudiants/104
+    263 /api/notes

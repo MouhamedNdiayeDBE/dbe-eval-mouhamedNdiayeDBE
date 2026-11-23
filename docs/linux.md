@@ -1,72 +1,145 @@
-# Partie 2 — Linux pratique
+# Partie 2 — Linux pratique (25 points)
 
-Ce fichier sert de carnet d'exécution. Les résultats doivent être copiés depuis la session réelle ; aucune sortie n'est inventée dans ce document.
+Les commandes suivent le sujet de l'ISEP. Les résultats de la reproduction technique sont consignés dans docs/preuves/validation_L3.txt, validation_L4.txt, validation_L5.txt et validation-linux.txt.
 
-## L1 — Environnement et preuves
+> Important sur les preuves : les fichiers validation_* sont issus d'une reproduction dans un environnement Linux isolé à partir du générateur et du matricule déjà inscrit dans docs/preuves/.bashrc. Ils vérifient réellement le code, mais ne remplacent pas la session interactive WSL de l'étudiant ni son historique Bash. Les traces personnelles originales doivent être conservées lors de la récupération de cette branche.
 
-Depuis le terminal Linux :
+## L1 — Environnement et preuves (2 pts)
 
-```bash
-export MATRICULE="VOTRE_MATRICULE"
-mkdir -p "$HOME/dbe-eval-${MATRICULE}"/{src,scripts,logs,docs/preuves,rapports,rendus}
-cd "$HOME/dbe-eval-${MATRICULE}"
-printf '\nexport MATRICULE=%q\nexport HISTTIMEFORMAT="%%F %%T "\n' "$MATRICULE" >> "$HOME/.bashrc"
-source "$HOME/.bashrc"
+Le matricule présent dans la configuration consignée est mouhamedNdiayeDBE. Le snapshot docs/preuves/.bashrc contient une affectation sans export. Pour que bash scripts/analyse.sh reçoive la variable, corriger le vrai ~/.bashrc :
+
+~~~bash
+export MATRICULE="mouhamedNdiayeDBE"
+export HISTTIMEFORMAT="%F %T "
+source ~/.bashrc
 printf 'MATRICULE=%s\n' "$MATRICULE"
+~~~
+
+Création demandée en une seule commande et démarrage de l'enregistrement (depuis le terminal WSL personnel) :
+
+~~~bash
+mkdir -p "$HOME/dbe-eval-${MATRICULE}"/{src,scripts,logs,docs/preuves,rapports,rendus} && cd "$HOME/dbe-eval-${MATRICULE}"
 script -q --timing=docs/preuves/linux.tm docs/preuves/linux.log
-```
+~~~
 
-Résultat observé à recopier : matricule affiché, chemin du projet et confirmation du démarrage de `script`.
+Dans cette session personnelle, exécuter L2 à L6 puis terminer avec exit.
 
-## L2 — Générateur Java
+## L2 — Générer vos données (2 pts)
 
-```bash
+Le fichier du sujet est présent dans src/GenerateurLogs.java.
+
+~~~bash
 mkdir -p out logs
-javac -encoding UTF-8 -d out src/GenerateurLogs.java
+javac -encoding UTF-8 -d out src/*.java
 java -cp out GenerateurLogs 2> logs/gen.err
-printf 'code retour : %s\n' "$?"
+echo "code=$?"
 java -cp out GenerateurLogs "$MATRICULE" 2000 > logs/access.log
 wc -l logs/access.log
 head -n 1 logs/access.log
-```
+~~~
 
-Résultats à recopier : code de retour du lancement sans arguments, nombre réel de lignes et première ligne réelle du journal.
+Résultats de la reproduction : compilation OK ; lancement sans arguments code=1 ; génération 2000 lignes. Première ligne pour le matricule consigné :
 
-## L3 — Analyse en une commande
+~~~text
+10.0.0.11 - - [23/Nov/2026:08:00:02 +0000] "GET /api/etudiants/104 HTTP/1.1" 200 787 28ms
+~~~
 
-Depuis la racine du projet :
+La sortie complète et l'empreinte du journal sont consignées dans docs/preuves/validation-linux.txt.
 
-1. Codes HTTP par fréquence :
-   `awk '{print $9}' logs/access.log | sort | uniq -c | sort -rn`
-2. Trois endpoints les plus appelés, sans query string :
-   `awk '{print $7}' logs/access.log | sed -E 's/\?.*//' | sort | uniq -c | sort -rn | head -n 3`
-3. Nombre d'IP distinctes :
-   `awk '{print $1}' logs/access.log | sort -u | wc -l`
-4. IP ayant le plus de 401 sur le login :
-   `awk '$7=="/api/auth/login" && $9==401 {print $1}' logs/access.log | sort | uniq -c | sort -rn | head -n 1`
-5. Moyenne des temps de réponse en 200 :
-   `awk '$9==200 {s+=$11+0; n++} END {if(n) printf "%.1f ms\n",s/n}' logs/access.log`
-6. Requête la plus lente :
-   `awk '{d=$11; sub(/ms$/,"",d); print d "\t" $0}' logs/access.log | sort -nr | cut -f2- | head -n 1`
-7. Nombre de requêtes par heure :
-   `awk '{print substr($4,14,2)}' logs/access.log | sort | uniq -c`
-8. Extraire les 5xx :
-   `grep -E ' 5[0-9]{2} ' logs/access.log > logs/erreurs_5xx.log && wc -l logs/erreurs_5xx.log`
-9. Anonymiser les IP :
-   `sed -E 's/^([0-9]{1,3}\.){3}[0-9]{1,3}/x.x.x.x/' logs/access.log > logs/access_anonyme.log`
-10. Journaux modifiés depuis moins de 60 minutes et dépassant 1 Ko :
-    `find . -type f -name '*.log' -mmin -60 -size +1k -exec wc -l {} +`
+## L3 — Analyser le journal en une ligne de commande (10 pts)
 
-Copier les commandes et leurs sorties réelles ici pendant la séance ; ne pas remplacer les résultats par des valeurs d'exemple.
+Une commande par question, tubes autorisés.
 
-## L4 — Script d'analyse
+**a.** Nombre de requêtes par code HTTP, du plus fréquent au moins fréquent :
 
-Le script attendu est `scripts/analyse.sh`. Contrôles locaux :
+~~~bash
+awk '{print $9}' logs/access.log | sort | uniq -c | sort -rn
+~~~
 
-```bash
+Résultat : 200=1632, 401=169, 201=101, 404=43, 400=26, 500=15, 503=14.
+
+**b.** Top 3 des endpoints sans ?page=... :
+
+~~~bash
+awk '{print $7}' logs/access.log | sed -E 's/\?.*//' | sort | uniq -c | sort -rn | sed -n '1,3p'
+~~~
+
+Résultat : /api/auth/login 362, /api/cours 292, /api/etudiants 284.
+
+**c.** Nombre d'adresses IP distinctes :
+
+~~~bash
+awk '{print $1}' logs/access.log | sort -u | wc -l
+~~~
+
+Résultat : 61.
+
+**d.** IP qui a le plus d'échecs 401 sur /api/auth/login, avec son nombre d'échecs :
+
+~~~bash
+awk '$7=="/api/auth/login" && $9==401 {print $1}' logs/access.log | sort | uniq -c | sort -rn | sed -n '1p'
+~~~
+
+Résultat : 113 197.149.97.9.
+
+**e.** Temps de réponse moyen des requêtes 200, avec une décimale :
+
+~~~bash
+awk '$9==200 {s+=$11+0; n++} END {if(n) printf "%.1f ms\n",s/n}' logs/access.log
+~~~
+
+Résultat : 161.9 ms.
+
+**f.** Ligne complète de la requête la plus lente :
+
+~~~bash
+awk '{d=$11; sub(/ms$/,"",d); print d "\t" $0}' logs/access.log | sort -nr | cut -f2- | sed -n '1p'
+~~~
+
+Résultat : requête /api/paiements, temps 2940ms (ligne complète dans validation_L3.txt).
+
+**g.** Nombre de requêtes par heure :
+
+~~~bash
+awk '{print substr($4,14,2)}' logs/access.log | sort | uniq -c
+~~~
+
+Résultat : 08=564, 09=574, 10=550, 11=312.
+
+**h.** Copier les erreurs 5xx, puis afficher leur nombre :
+
+~~~bash
+grep -E 'HTTP/1\.1" 5[0-9]{2} ' logs/access.log > logs/erreurs_5xx.log; wc -l logs/erreurs_5xx.log
+~~~
+
+Résultat : 29 logs/erreurs_5xx.log. Le motif inclut HTTP/1.1" afin de ne pas confondre le code HTTP avec le nombre d'octets.
+
+**i.** Copie anonymisée où chaque IP est remplacée :
+
+~~~bash
+sed -E 's/^([0-9]{1,3}\.){3}[0-9]{1,3}/x.x.x.x/' logs/access.log > logs/access_anonyme.log
+~~~
+
+La première ligne commence bien par x.x.x.x.
+
+**j.** Fichiers .log modifiés il y a moins de 60 minutes et de plus de 1 Ko, avec leur nombre de lignes :
+
+~~~bash
+find . -type f -name '*.log' -mmin -60 -size +1k -exec wc -l {} +
+~~~
+
+Résultat : 2000 access.log, 29 erreurs_5xx.log, 2000 access_anonyme.log, soit 4029 total. Les dix sorties complètes sont dans docs/preuves/validation_L3.txt.
+
+## L4 — Script d'analyse scripts/analyse.sh (7 pts)
+
+Le script commence par set -euo pipefail, comporte au moins trois fonctions et accepte bash scripts/analyse.sh <fichier.log> [--top N], avec top par défaut égal à 3. Il refuse MATRICULE non défini et génère rapports/rapport_<matricule>_<AAAAMMJJ_HHMM>.txt. Le rapport contient la date, utilisateur@machine, matricule, SHA-256, familles 2xx/3xx/4xx/5xx calculées dans une boucle, top endpoints, IP suspecte et moyenne des 200. Il contient aussi les requêtes par heure pour G5.
+
+Tests exécutés :
+
+~~~bash
 bash -n scripts/analyse.sh
-export MATRICULE
 bash scripts/analyse.sh logs/access.log --top 3
+echo "code=$?"
 bash scripts/analyse.sh
 echo "code=$?"
 bash scripts/analyse.sh logs/absent.log
@@ -74,35 +147,35 @@ echo "code=$?"
 : > logs/vide.log
 bash scripts/analyse.sh logs/vide.log
 echo "code=$?"
-```
+~~~
 
-Codes exigés par le sujet : arguments incorrects = 1 ; fichier absent = 2 ; fichier vide = 3. Le rapport doit contenir SHA-256, familles HTTP, top endpoints, IP suspecte, moyenne des 200 et requêtes par heure.
+Résultats : syntaxe 0 ; cas correct 0 ; sans argument 1 ; fichier absent 2 ; fichier vide 3. Contrôle supplémentaire : MATRICULE absent retourne 1 ; --top 5 et --top 0 sont acceptés. Voir docs/preuves/validation_L4.txt.
 
-## L5 — Processus et signaux
+## L5 — Processus et signaux (3 pts)
 
-```bash
-bash -n scripts/surveille.sh
-nohup bash scripts/surveille.sh > /dev/null 2>&1 &
+scripts/surveille.sh écrit toutes les cinq secondes l'heure et le nombre de lignes dans logs/surveillance.log. Le trap SIGTERM arrête également le processus sleep enfant puis ajoute arrêt propre avant de terminer.
+
+~~~bash
+nohup bash scripts/surveille.sh >/dev/null 2>&1 &
 PID=$!
-sleep 1
-pgrep -af 'scripts/surveille.sh'
+pgrep -af '^bash scripts/surveille.sh'
 ps -o pid,ppid,stat,etime -p "$PID"
 kill -TERM "$PID"
 wait "$PID" || true
 tail -n 3 logs/surveillance.log
-```
+~~~
 
-La dernière ligne doit contenir `arrêt propre`. Conserver la sortie réelle dans la preuve de session.
+Dans le test isolé, le processus a été trouvé (PID 1032), ps a affiché PID/PPID/état/durée et le journal a terminé par arrêt propre. Sortie détaillée dans docs/preuves/validation_L5.txt. Rejouer localement pour obtenir le PID et la preuve de la machine personnelle.
 
-## L6 — Clôture
+## L6 — Clôture et empreinte (1 pt)
 
-À exécuter dans la session enregistrée avant `exit` :
+Dans la session script personnelle, avant exit :
 
-```bash
+~~~bash
 history > docs/preuves/historique_linux.txt
 exit
 tar czf "rendus/linux_${MATRICULE}.tar.gz" src scripts docs rapports
 sha256sum "rendus/linux_${MATRICULE}.tar.gz"
-```
+~~~
 
-Noter les 16 premiers caractères de l'empreinte sur la fiche de contrôle. Ne plus modifier l'archive après calcul de son empreinte.
+L'archive de validation rendus/linux_mouhamedNdiayeDBE.tar.gz est créée et vérifiée. Elle ne contient pas encore les traces personnelles originales linux.log/linux.tm, git.log/git.tm ni historique_linux.txt : voir docs/preuves/ARCHIVE_ETAT.md. Ne pas utiliser son SHA-256 comme empreinte définitive de la remise ; régénérer l'archive après la vraie session WSL.
