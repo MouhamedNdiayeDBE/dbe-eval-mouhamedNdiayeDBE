@@ -73,7 +73,7 @@ temps_moyen() {
 
 par_heure() {
     echo
-    echo "--- Requêtes par heure ---"
+    echo "--- Requêtes par heure (UTC) ---"
     awk '{print substr($4,14,2)}' "$FICHIER" | sort | uniq -c
 }
 
