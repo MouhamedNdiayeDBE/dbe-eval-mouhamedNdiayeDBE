@@ -51,7 +51,7 @@ La variable de dépôt MATRICULE doit être vérifiée dans Settings → Secrets
 
 Le workflow actif est .github/workflows/ci.yml. Il se trouve au bon emplacement. Un doublon dans .github/workflow/ci.yml a été supprimé dans la PR #2. Le workflow vérifie la variable, la syntaxe Bash, compile Java 17, génère 2 000 lignes, exécute analyse.sh, teste l'arrêt SIGTERM et publie le rapport comme artefact.
 
-La PR #1 a été fusionnée, mais les exécutions initiales étaient rouges. La PR #2 (fix/evaluation-deliverables-ci) est ouverte. Les runs observés ont échoué avant d'exécuter une étape : runner_id=0, steps=[], aucun log exploitable. Il reste à obtenir une exécution verte sur GitHub avant de considérer G4 comme validé.
+La PR #1 et la PR #2 ont été fusionnées. La PR #2 (fix/evaluation-deliverables-ci) a été intégrée à main par le merge commit 84512b4 le 23 novembre 2026. Le merge commit est marqué Verified par GitHub, mais les commits créés via l'API dans la branche de correction ne portent pas tous une signature SSH vérifiée : ils ne satisfont donc pas l'exigence de signature personnelle. Le run de main 45202493199 a échoué avant de démarrer le job (runner_id=0, steps=[], aucun log de step exploitable). Cette panne de démarrage n'établit pas une erreur de compilation ; G4 reste non validé tant qu'un run ne termine pas au vert.
 
 Sur le poste, vérifier que Actions est activé et que la variable MATRICULE est définie. Puis ouvrir la PR vers main, attendre un pipeline vert et seulement ensuite fusionner. Le rapport d'artefact doit correspondre au rapport local.
 
@@ -79,7 +79,7 @@ git merge --ff-only feature/heures
 git log --oneline --decorate -10
 ~~~
 
-Le README demandé par le sujet a été ajouté dans la PR #2 sous README.md ; cette PR n'est pas encore fusionnée. Ne pas faire de push --force sur main. Les WIP déjà publiés sur main ne sont pas supprimés dans cette correction afin de préserver l'historique distant.
+Le README demandé par le sujet est maintenant présent sur main sous README.md depuis le merge de la PR #2. Ne pas faire de push --force sur main. Les WIP déjà publiés sur main ne sont pas supprimés dans cette correction afin de préserver l'historique distant. Le résultat de G5 reste donc incomplet : la procédure de rebase interactif et l'historique final sans WIP ne sont pas démontrés.
 
 ## G6 — Mettre un travail de côté (2 pts)
 
@@ -148,7 +148,7 @@ Recopier le SHA court sur la fiche de contrôle. Ne jamais fabriquer reflog.txt 
 | Dépôt privé, main, collaborateur pape1283 | OK |
 | .gitignore, code Java, scripts | OK |
 | README complet et documentation | ajoutés sur la PR #2, non fusionnés |
-| Workflow CI au bon emplacement | OK, mais runs rouges avant les étapes |
+| Workflow CI au bon emplacement | présent ; run 45202493199 échoue avant les étapes (runner_id: 0) |
 | par_heure dans le rapport | OK |
 | Rebase interactif des 3 WIP sur feature/heures | non démontré ; deux WIP déjà sur main |
 | Stash / stash pop | non démontré |
