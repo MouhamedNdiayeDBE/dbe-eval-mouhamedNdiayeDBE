@@ -20,7 +20,7 @@ verifier() {
     fi
     FICHIER="$1"
     if [ "$#" -eq 3 ]; then
-        if [ "$2" != "--top" ] || ! [[ "$3" =~ ^[0-9]+$ ]]; then
+        if [ "$2" != "--top" ] || ! [[ "$3" =~ ^[1-9][0-9]*$ ]]; then
             usage
         fi
         TOP="$3"
