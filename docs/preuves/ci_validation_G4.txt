@@ -1,0 +1,53 @@
+# Preuve de validation GitHub Actions — Partie 4 / G4
+
+Date : 23 novembre 2026
+Dépôt : MouhamedNdiayeDBE/dbe-eval-mouhamedNdiayeDBE
+Branche : main
+Commit testé : 7c3fbce9055a6fbd35097a37bd4ed5780960e7b8
+Workflow run : 45204763558
+Tentative : 2
+URL : https://github.com/MouhamedNdiayeDBE/dbe-eval-mouhamedNdiayeDBE/actions/runs/45204763558
+
+## Exécution GitHub
+
+Runner affecté : 1000002832 (GitHub Actions)
+Conclusion du run : success
+Conclusion du job build : success
+Étapes : 10 sur 10 réussies (hors étapes Post et Complete job, elles aussi réussies).
+
+1. Set up job — success
+2. Checkout — success
+3. Installer Java 17 — success
+4. Vérifier la variable MATRICULE — success
+5. Vérifier la syntaxe Bash — success
+6. Compiler Java — success
+7. Générer et analyser le journal — success
+8. Vérifier les arguments invalides de analyse.sh — success
+9. Tester l'arrêt propre du surveillant — success
+10. Publier le rapport — success
+
+## Artefact
+
+Nom : rapport-analyse
+ID : 14833788417
+Taille : 1 616 octets
+SHA-256 du ZIP de l'artefact : 03b900d8f937cabcbf04f67a613a061b4617df388256bac40b363f936aebde84
+État : disponible, non expiré au moment du contrôle.
+
+## Rapport généré par le runner
+
+- Matricule : mouhamedNdiayeDBE
+- Fichier analysé : logs/access.log
+- Nombre de lignes : 2 000 (contrôle CI)
+- SHA-256 du journal : da36ac7ede3b00652153e792f7355a5e80bcb1c0a2026a20c83e89c6b7ccffcd
+- Familles HTTP : 2xx = 1 733 ; 3xx = 0 ; 4xx = 238 ; 5xx = 29
+- Top endpoints : /api/auth/login = 362 ; /api/cours = 292 ; /api/etudiants = 284
+- IP suspecte : 197.149.97.9 (113 échecs 401 sur /api/auth/login)
+- Temps moyen des réponses 200 : 161,9 ms
+- Requêtes par heure UTC : 08 = 564 ; 09 = 574 ; 10 = 550 ; 11 = 312
+
+Le contenu de rapport-analyse.zip a été téléchargé et inspecté. Le rapport créé par le runner contient les mêmes métriques et le même SHA-256 du journal que la reproduction locale documentée.
+
+## Historique de l'incident runner
+
+La tentative 1 du run avait échoué avant attribution du runner (runner_id=0, aucune étape). Le re-run de la tentative 2 a obtenu le runner 1000002832 et a terminé avec succès. Le statut final à retenir est celui de la tentative 2 : success.
