@@ -1,28 +1,78 @@
 name: CI
+
 on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      MATRICULE: ${{ vars.MATRICULE }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Installer Java 17
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-      - name: Compiler
-        run: javac -encoding UTF-8 -d out src/*.java
-      - name: Générer et analyser le journal
-        env:
-          MATRICULE: ${{ vars.MATRICULE }}
+
+      - name: Vérifier la variable MATRICULE
+        shell: bash
         run: |
-          mkdir -p logs
+          if [[ -z "${MATRICULE:-}" ]]; then
+            echo "::error::La variable de dépôt MATRICULE est absente. Crée-la dans Settings > Secrets and variables > Actions > Variables."
+            exit 1
+          fi
+
+      - name: Vérifier la syntaxe Bash
+        run: |
+          bash -n scripts/analyse.sh
+          bash -n scripts/surveille.sh
+
+      - name: Compiler Java
+        run: |
+          mkdir -p out
+          javac -encoding UTF-8 -d out src/*.java
+
+      - name: Générer et analyser le journal
+        shell: bash
+        run: |
+          mkdir -p logs rapports
           java -cp out GenerateurLogs "$MATRICULE" 2000 > logs/access.log
+          test "$(wc -l < logs/access.log)" -eq 2000
           bash scripts/analyse.sh logs/access.log --top 3
-          cat rapports/*.txt
-      - uses: actions/upload-artifact@v4
+          shopt -s nullglob
+          reports=(rapports/*.txt)
+          if (( ${#reports[@]} == 0 )); then
+            echo "::error::Aucun rapport n'a été généré."
+            exit 1
+          fi
+          grep -q 'SHA256' "${reports[-1]}"
+          grep -q 'Requêtes par heure' "${reports[-1]}"
+          cat "${reports[-1]}"
+
+      - name: Tester l'arrêt propre du surveillant
+        shell: bash
+        run: |
+          bash scripts/surveille.sh logs/access.log logs/surveillance-ci.log &
+          pid=$!
+          sleep 1
+          kill -TERM "$pid"
+          wait "$pid"
+          grep -q 'arrêt propre' logs/surveillance-ci.log
+
+      - name: Publier le rapport
+        uses: actions/upload-artifact@v4
         with:
-          name: rapport
-          path: rapports/
+          name: rapport-analyse
+          path: rapports/*.txt
+          if-no-files-found: error
